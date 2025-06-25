@@ -44,9 +44,6 @@ const login = async () => {
     localStorage.setItem('jwt', token);
     localStorage.setItem('role', role);
 
-    // Authorization 헤더를 전역 설정하고 싶은 경우:
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-
     alert('로그인 성공');
     router.push('/check');
   } catch (err) {
@@ -54,4 +51,30 @@ const login = async () => {
     console.error(err);
   }
 };
+
+// const login = async () => {
+//   try {
+//     const response = await axios.post('http://localhost:8080/auth/login', {
+//       username: username.value,
+//       password: password.value,
+//     });
+
+//     const token = response.data.token;
+//     const role = response.data.role;
+
+//     console.log(response.data);
+
+//     localStorage.setItem('jwt', token);
+//     localStorage.setItem('role', role);
+
+//     // Authorization 헤더 전역 설정
+//     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+//     alert('로그인 성공');
+//     router.push('/check');
+//   } catch (err) {
+//     alert(`로그인 실패, ${err.message}`);
+//     console.error(err);
+//   }
+// };
 </script>

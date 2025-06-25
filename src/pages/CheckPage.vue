@@ -4,8 +4,6 @@
   <button @click="checkAuth('admin')">ADMIN 권한 확인</button>&nbsp;
   <button @click="checkAuth('member')">MEMBER 권한 확인</button>&nbsp;
   <button @click="checkAuth('normal')">NORMAL 권한 확인</button>
-  <h2 v-if="flag">통신 성공</h2>
-  <h2 v-else>통신 실패</h2>
   <h2>서버 응답 : {{ serverMsg }}</h2>
 </template>
 
@@ -28,7 +26,11 @@ const init = () => {
 
 const checkAuth = async (role) => {
   try {
-    const response = await axios.get(`http://localhost:8080/auth/${role}`);
+    const response = await axios.get(`http://localhost:8080/auth/${role}`, {
+      // headers: {
+      //   Authorization: `Bearer ${token.value}`,
+      // },
+    });
 
     flag.value = true;
 
