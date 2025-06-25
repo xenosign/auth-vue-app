@@ -27,9 +27,9 @@ const init = () => {
 const checkAuth = async (role) => {
   try {
     const response = await axios.get(`http://localhost:8080/auth/${role}`, {
-      // headers: {
-      //   Authorization: `Bearer ${token.value}`,
-      // },
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
     });
 
     flag.value = true;

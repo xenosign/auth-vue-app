@@ -24,6 +24,16 @@ const router = createRouter({
       name: 'check',
       component: () => import('../pages/CheckPage.vue'),
     },
+    {
+      path: '/kakao',
+      name: 'kakao',
+      component: () => import('../pages/KakaoPage.vue'),
+    },
+    {
+      path: '/kakao-check',
+      name: 'kakao-check',
+      component: () => import('../pages/KakaoCheckPage.vue'),
+    },
   ],
 });
 
