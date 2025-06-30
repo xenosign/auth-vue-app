@@ -5,7 +5,7 @@
 
 <script setup>
 const loginWithKakao = () => {
-  const REST_API_KEY = '2be90ab71a1f36d735f12cd91b53a982';
+  const REST_API_KEY = '8eda34de2e2f0a5d136186c9de486b0e';
   const REDIRECT_URI = 'http://localhost:8080/oauth/kakao/callback';
 
   const frontendRedirect = encodeURIComponent(
