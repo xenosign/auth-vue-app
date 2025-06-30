@@ -47,15 +47,15 @@ const checkAuth = async (role) => {
 };
 
 const init = async () => {
-  nickname.value = route.query.nickname || '';
-  profileImage.value = route.query.profileImage || '';
-  email.value = route.query.email || '';
-
   try {
-    const res = await axios.get('http://localhost:8080/user/me', {
+    const res = await axios.get(`http://localhost:8080/oauth/user/me`, {
       withCredentials: true,
     });
-    role.value = res.data.role;
+    console.log(res.data);
+
+    nickname.value = res.data.nickname;
+    profileImage.value = res.data.profileImageUrl;
+    email.value = res.data.email;
   } catch (e) {
     role.value = '권한 없음';
   }
