@@ -5,11 +5,11 @@
 
 <script setup>
 const loginWithKakao = () => {
-  const REST_API_KEY = '8eda34de2e2f0a5d136186c9de486b0e';
+  const REST_API_KEY = '0edfdf21309e5ba87a8ffadf80179b55';
   const REDIRECT_URI = 'http://localhost:8080/oauth/kakao/callback';
 
   const frontendRedirect = encodeURIComponent(
-    window.location.origin + '/kakao-check'
+    window.location.origin + '/kakao-check',
   );
 
   const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&state=${frontendRedirect}`;
