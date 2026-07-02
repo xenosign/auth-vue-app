@@ -1,6 +1,6 @@
 <template>
-  <h1>현재 로그인 된 권한 : ROLE_KAKAO</h1>
-  <h2>사용자 Email : {{ email }}</h2>
+  <h1>카카오 로그인 정보 확인</h1>
+  <!-- <h2>사용자 Email : {{ email }}</h2> -->
   <h2>사용자 이름 : {{ nickname }}</h2>
   <img
     v-if="profileImage"
